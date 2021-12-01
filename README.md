@@ -8,7 +8,7 @@
 * Marcos Vinicius Caldeira Pacheco: &nbsp;&nbsp;Front-end Developer
 
 ## Escopo:
-A aplicação implementada será um website que funcione como uma central de dados musicais do spotify. Nela, o usuário poderá criar automaticamente, a partir de palavras-chave, playlists com músicas compatíveis, permitindo criar playlists para eventos específicos, ou baseadas em um sentimento, por exemplo. Além disso, cada usuário poderá associar sua conta e observar seus dados de uso, bem como faixas e playlists salvas, dentre outros informações relevantes de sua conta.
+O Listify será um website que funcione como uma central de dados musicais do spotify. Nela, o usuário poderá criar automaticamente, a partir de palavras-chave, playlists com músicas compatíveis, permitindo criar playlists para eventos específicos, ou baseadas em um sentimento, por exemplo. Além disso, cada usuário poderá associar sua conta e observar seus dados de uso, bem como faixas e playlists salvas, dentre outros informações relevantes de sua conta.
 
 ## Backlog do Sprint:
 
