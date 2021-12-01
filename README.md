@@ -18,7 +18,7 @@ O Listify será um website que funcione como uma central de dados musicais do sp
     * Design Base das Telas [Marcos e Emanuel]
     * Construir Telas [Marcos]
     * Plugar Back-end no Front-end; [Isaac] 
-    * Plugar Banco de dados; [André]
+    * Implementar e Plugar Banco de dados; [André]
 
 ### História:
 Como usuário do site, eu gostaria de pesquisar músicas por palavras-chave.
