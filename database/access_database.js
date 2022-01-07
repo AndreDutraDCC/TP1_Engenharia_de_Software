@@ -1,10 +1,21 @@
 const { MongoClient } = require('mongodb');
 
+function obter_colecao() {
+    let doc = {};
+    const uri = "mongodb+srv://ListifyES:musiquinhastopzera@projetoes1.tm97r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    client.connect(err => {
+      const collection = client.db("Listify_db").collection("statistics");
+      doc = collection.find({})
+    });
+    return doc
+}
+
 function novo_sentimento(sentimento) {
     const uri = "mongodb+srv://ListifyES:musiquinhastopzera@projetoes1.tm97r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(err => {
-      const collection = client.db("test").collection("devices");
+      const collection = client.db("Listify_db").collection("statistics");
       key = "sentimentos."+sentimento;
       collection.updateOne(
           {},
@@ -19,7 +30,7 @@ function novo_acesso_agora(){
     const uri = "mongodb+srv://ListifyES:musiquinhastopzera@projetoes1.tm97r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(err => {
-      const collection = client.db("test").collection("devices");
+      const collection = client.db("Listify_db").collection("statistics");
       collection.updateOne(
           {},
           {
@@ -33,7 +44,7 @@ function nova_pesquisa(query){
     const uri = "mongodb+srv://ListifyES:musiquinhastopzera@projetoes1.tm97r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(err => {
-      const collection = client.db("test").collection("devices");
+      const collection = client.db("Listify_db").collection("statistics");
       key = "pesquisas."+query;
       collection.updateOne(
           {},
