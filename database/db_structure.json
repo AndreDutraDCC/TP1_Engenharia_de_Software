@@ -1,0 +1,18 @@
+{
+    "sentimentos": {
+        "muito_feliz": 0,
+        "feliz": 0,
+        "neutro": 0,
+        "triste": 0,
+        "muito_triste": 0
+    },
+
+    "acessos":[],
+
+    "pesquisas": {
+        "Marcos": 1,
+        "Vinicius": 1,
+        "Caldeira": 1,
+        "Nos te amamos": 1
+    }
+}
