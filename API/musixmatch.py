@@ -8,6 +8,10 @@ def get_track_id(title, artist):
     Gets the ID of a track utilizing its title and the artist.
     """
     response = requests.get(SEARCH_URL.format(title, artist)).json()
+
+    if response['message']['header']['status_code'] == 404:
+        return 404
+
     track_id = response['message']['body']['track_list'][0]['track']['track_id']
     return track_id
 
@@ -16,6 +20,10 @@ def get_track_lyrics(track_id):
     Gets 30% of the lyrics of a song with its id.
     """
     response = requests.get(LYRICS_URL.format(track_id)).json()
+
+    if response['message']['header']['status_code'] == 404:
+        return 404
+
     lyrics = response['message']['body']['lyrics']['lyrics_body'][:-75]
     return lyrics
 

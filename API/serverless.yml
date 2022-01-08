@@ -7,23 +7,11 @@ provider:
   lambdaHashingVersion: 20201221
 
 functions:
-  spotify:
-    handler: handler.spotify
+  main:
+    handler: handler.main
     events:
       - httpApi:
-          path: /spotify
-          method: get
-  musixmatch:
-    handler: handler.musixmatch
-    events:
-      - httpApi:
-          path: /musixmatch
-          method: get
-  googlecloud:
-    handler: handler.googlecloud
-    events:
-      - httpApi:
-          path: /google
+          path: /
           method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
