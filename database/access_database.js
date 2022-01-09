@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-function obter_colecao() {
+function obter_documento() {
     let doc = {};
     const uri = "mongodb+srv://ListifyES:musiquinhastopzera@projetoes1.tm97r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -8,7 +8,7 @@ function obter_colecao() {
       const collection = client.db("Listify_db").collection("statistics");
       doc = collection.find({})
     });
-    return doc
+    return doc[0]
 }
 
 function novo_sentimento(sentimento) {
