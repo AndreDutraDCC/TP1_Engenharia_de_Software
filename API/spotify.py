@@ -45,7 +45,7 @@ def parse_results(results):
                     'album_img_url': album_img_url,
                     'external_urls': spotify_url,
                     'preview_url': preview_url})
-    ret = ret[:10]
+    ret = ret[:20]
 
     return ret
 

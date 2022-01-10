@@ -5,6 +5,8 @@ provider:
   name: aws
   runtime: python3.8
   lambdaHashingVersion: 20201221
+  httpApi:
+    cors: true
 
 functions:
   main:
@@ -12,7 +14,7 @@ functions:
     events:
       - httpApi:
           path: /
-          method: get
+          method: post
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)

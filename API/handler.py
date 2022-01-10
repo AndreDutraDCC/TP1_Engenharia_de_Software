@@ -8,6 +8,7 @@ def main(event, context):
     Receives a keyword and returns a dictionary list, with each list element
     representing a track from Spotify.
     """
+    response = {}
     ret = []
 
     # gets the keyword searched
@@ -19,7 +20,11 @@ def main(event, context):
     track_list = parse_results(results)
 
     if len(track_list) == 0:
-        return {'message': 'No track returned from that query.'}
+        response['message'] = 'No track returned from that query.'
+        response["headers"] = {'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': True}
+        response['track_list'] = ret
+        return reponse
 
     for track in track_list:
         # search for lyrics in musixmatch api using title and artist
@@ -46,6 +51,9 @@ def main(event, context):
         track['sentiment'] = {'score': score, 'magnitude': magnitude}
         ret.append(track)
 
-    return {'track_list': ret}
+
+    response["headers"] = {'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': True}
+    response['track_list'] = ret
 
     return response
