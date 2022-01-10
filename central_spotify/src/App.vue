@@ -68,6 +68,7 @@
     <v-main>
       <!-- <v-sheet color="secondary"> -->
         <router-view/>
+        <!-- <Playlist/> -->
       <!-- </v-sheet> -->
     </v-main>
     
@@ -94,9 +95,14 @@
 </template>
 
 <script>
+import Playlist from '@/components/Playlist'
 
 export default {
   name: 'App',
+
+  components: {
+    Playlist,
+  },
 
   data: () => ({
     //

@@ -1,13 +1,21 @@
 <template>
-  <v-container>
+  <v-div>
     <v-row class="text-center align-center" justify="center" align="center">
-      <v-col cols="12">
-        <v-img
-          class="my-3"
-          contain
-          height="350"
-          :src="require('../assets/logoComNome.png')"
-        ></v-img>
+      <v-col style="padding:0px !important;" cols="12" justify="center" align="center">
+        <v-parallax height="400" src="@/assets/party-xsmall.jpg"> 
+        <v-row justify="center" align="center">
+          <v-col justify="center" align="center">
+            <v-sheet width="400px" height="350px" color="#FFFB" elevation="5" style="border-radius:40px !important" >
+              <v-img
+                class="my-3"
+                contain
+                height="350"
+                :src="require('../assets/logoComNome.png')"
+              ></v-img>
+            </v-sheet>
+          </v-col>
+        </v-row>
+        </v-parallax>
         <!-- <v-img
           :src="require('../assets/logo.svg')"
           class="my-3"
@@ -104,7 +112,7 @@
       </v-col>
 
     </v-row>
-  </v-container>
+  </v-div>
 </template>
 
 <script>
