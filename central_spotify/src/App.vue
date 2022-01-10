@@ -72,8 +72,8 @@
       <!-- </v-sheet> -->
     </v-main>
     
-    <v-footer color="primary">
-      <v-card flat tile width="100%" class="primary text-center">
+    <v-footer color="secondary">
+      <v-card flat tile width="100%" class="secondary text-center">
 
         <v-divider class="white"></v-divider>
 
@@ -96,6 +96,7 @@
 
 <script>
 import Playlist from '@/components/Playlist'
+import axios from "axios"
 
 export default {
   name: 'App',
@@ -107,24 +108,35 @@ export default {
   data: () => ({
     //
   }),
-
+  
   methods: {
     clickLogo(){
       this.$router.push('/')
-      console.log("click logo")
+      // console.log("click logo")
     },
     keyword(){
       this.$router.push('/keyword')
-      console.log("click keyword")
+      // console.log("click keyword")
     },
     dashboard(){
       this.$router.push('/dashboard')
-      console.log("click dashboard")
+      // console.log("click dashboard")
     },
     about(){
       this.$router.push('/about')
       console.log("click about")
     }
-  }
+  },
+  async mounted() {
+    // console.log("ACESSO AO SITE")
+    // let obj = await axios.get("https://listify-es-default-rtdb.firebaseio.com/data/acessos.json")
+    // console.log(obj.data)
+    let body = new Date()
+    body = body.getTime()
+    await axios.post("https://listify-es-default-rtdb.firebaseio.com/data/acessos.json", body)
+    // obj = obj.data.
+    // let obj = await axios.get("https://listify-es-default-rtdb.firebaseio.com/data.json")
+  },
+
 };
 </script>

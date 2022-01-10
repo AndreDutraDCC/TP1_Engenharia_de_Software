@@ -1,28 +1,29 @@
 <template>
-  <v-div>
+  <v-sheet color="primary" class="white--text">
     <v-row class="text-center align-center" justify="center" align="center">
       <v-col style="padding:0px !important;" cols="12" justify="center" align="center">
-        <v-parallax height="400" src="@/assets/party-xsmall.jpg"> 
+        <v-parallax height="500" src="@/assets/party-xsmall.jpg"> 
         <v-row justify="center" align="center">
           <v-col justify="center" align="center">
-            <v-sheet width="400px" height="350px" color="#FFFB" elevation="5" style="border-radius:40px !important" >
+            <v-sheet width="400px" height="350px" color="#FFF0" elevation="0" style="border-radius:40px !important" >
               <v-img
                 class="my-3"
                 contain
                 height="350"
-                :src="require('../assets/logoComNome.png')"
+                :src="require('../assets/logoComNomeWhite.png')"
               ></v-img>
             </v-sheet>
           </v-col>
         </v-row>
         </v-parallax>
+
         <!-- <v-img
           :src="require('../assets/logo.svg')"
           class="my-3"
           contain
           height="200"
         /> -->
-      </v-col>
+      </v-col >
 
       <!-- <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">
@@ -38,17 +39,17 @@
           >Discord Community</a>
         </p>
       </v-col> -->
-      <v-col cols="12" justify="center" align="center">
+      <v-col cols="12" class="mt-n16" justify="center" align="center">
 
-        <v-card width="80%" class="pa-6 mb-8" border-radius="20px" elevation="5">
-          <h4 class="font-weight-bold mb-6">
+        <v-card width="80%" rounded="xl" color="secondary" class="white--text pa-6 mb-8" border-radius="20px" elevation="5">
+          <h2 class="font-weight-bold mb-6">
           O Listify é um website que funciona como uma central de dados musicais do spotify!
-          </h4>
-          <v-sheet width="80%">
+          </h2>
+          <v-sheet width="70%" color="secondary"  class="white--text">
             <ul class="text-justify">
-              <li>Criar automaticamente, a partir de palavras-chave, playlists com músicas compatíveis. </li>
+              <li>Crie automaticamente, a partir de palavras-chave, playlists com músicas compatíveis. </li>
               <li>Verifique o sentimento geral das músicas de uma playlist, e entenda qual é a sua vibe preferida.</li>
-              <li>Olhar as estatísticas do site para ver quais são as musicas mais buscadas do momento</li>
+              <li>Olhe as estatísticas do site para ver quais são as musicas mais buscadas do momento.</li>
             </ul> 
           </v-sheet>
             <!-- O Listify é um website que funciona como uma central de dados musicais do spotify! 
@@ -58,9 +59,6 @@
             Também existe a opção de olhar as estatísticas do site e ver quais são as musicas mais buscadas do momento
             <br> -->
         </v-card>
-        <h5 class="my-6">
-          O Projeto faz parte do Trabalho Prático 1 de Engenharia de Software, sendo desenvolvido pelos alunos André Luiz, Antônio Isaac, Emanuel Juliano e Marcos Vinicius.
-        </h5>
       </v-col>
 
       <v-col
@@ -69,12 +67,12 @@
          justify="center" align="center"
       >
         <v-sheet
-          color="white"
-          elevation="15"
+          color="secondary"
+          elevation="20"
           rounded="xl"
           height="150"
           width="50%"
-          class="py-6 my-2"
+          class="py-6 my-2 white--text"
           >
 
           <h2 class="headline font-weight-bold mb-8">
@@ -84,11 +82,11 @@
           <v-row justify="center">
             <div class="mb-16">
 
-              <v-btn color="info" class="mx-1" @click="keyword()">
+              <v-btn color="success" class="mx-4" @click="keyword()">
                 <v-icon class="mr-2">mdi-magnify</v-icon>
                 PALAVRA-CHAVE
               </v-btn>
-              <v-btn color="info" class="mx-1" @click="dashboard()">
+              <v-btn color="success" class="mx-4" @click="dashboard()">
                 <v-icon class="mr-2">mdi-chart-box</v-icon>
                 ESTATÍSTICAS
               </v-btn>
@@ -109,10 +107,12 @@
             </a> -->
           </v-row>
         </v-sheet>
+        <h5 class="my-6">
+          O Projeto faz parte do Trabalho Prático 1 de Engenharia de Software, sendo desenvolvido pelos alunos André Luiz, Antônio Isaac, Emanuel Juliano e Marcos Vinicius.
+        </h5>
       </v-col>
-
     </v-row>
-  </v-div>
+  </v-sheet>
 </template>
 
 <script>
@@ -121,6 +121,6 @@
 
     data: () => ({
       
-    }),
+      }),
   }
 </script>
