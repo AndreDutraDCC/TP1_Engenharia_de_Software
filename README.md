@@ -58,4 +58,4 @@ Gostaria de salvar as playlists montadas pelo site na minha conta do spotify.
   * Salvar usuário no banco de dados [André]
 
 ## Principais tecnologias
-O projeto será programado inteiramente na linguagem **JavaScript**, e para o front-end será usado o framework **Vue.js**. Para a coleta de dados, será usada a **Spotify Web API**, que permite acesso aos bancos de dados de usuários, faixas, playlists e outros dados do Spotify relevantes para a aplicação, e a **STANDS4 Synonyms API**, que identifica sinônimos de palavras. Os testes serão feitos por meio dos frameworks de testes **Jest** e **Selenium**.
+O projeto foi programado na linguagem **JavaScript** no front-end, usando o framework **Vue.js**, e **python** e **AWS** no backend. Para a coleta de dados, foi usada a **Spotify Web API**, que permite acesso aos bancos de dados de usuários, faixas, playlists e outros dados do Spotify relevantes para a aplicação, e a **Google Natural Language API**, que permitiu a classificação de sentimentos para cada texto.
