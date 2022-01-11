@@ -1,7 +1,34 @@
 from sentiment import sample_analyze_sentiment
 from spotify import get_client_token, search_track, parse_results
 from musixmatch import get_track_id, get_track_lyrics
+from base64 import b64decode
+from handle_db import get_view, set_novo_sentimento, set_nova_pesquisa, set_novo_acesso
 import json
+
+def db(event, context):
+    """
+    Receives which kind of action it wants to do with the database and the necessary data.
+    """
+    response = {}
+    action = json.loads(b64decode(event['body'] + b'=' * (-len(event['body']) % 4)))['action']
+
+    if action == 'pega_visao':
+        response['dados'] = get_view()
+    else:
+        data = json.loads(b64decode(event['body']))['data']
+
+        if action == 'novo_sentimento':
+            set_novo_sentimento(data)
+        elif action == 'novo_acesso':
+            set_novo_acesso(data)
+        elif action == 'nova_pesquisa':
+            set_nova_pesquisa(data)
+        else:
+            reponse['message'] = 'Couldn\'t find the requested action.'
+
+    response["headers"] = {'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': True}
+    return response
 
 def main(event, context):
     """
@@ -12,7 +39,7 @@ def main(event, context):
     ret = []
 
     # gets the keyword searched
-    keyword = json.loads(event['body'])['keyword']
+    keyword = json.loads(b64decode(event['body']))['keyword']
 
     # search for keyword in spotify api
     access_token = get_client_token()
@@ -44,13 +71,19 @@ def main(event, context):
             continue
 
         # get the track sentiment with google cloud language api
-        score, magnitude = sample_analyze_sentiment(text)
+        result = sample_analyze_sentiment(text)
+        if result == 404:
+            track['sentiment'] = {'message': 'Couldn\'t find the lyrics in Musixmatch API'}
+            ret.append(track)
+            continue
+
+        score = result[0]
+        magnitude = result[1]
 
         # adds the information to the track info and adds it all to the
         # return list
         track['sentiment'] = {'score': score, 'magnitude': magnitude}
         ret.append(track)
-
 
     response["headers"] = {'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': True}

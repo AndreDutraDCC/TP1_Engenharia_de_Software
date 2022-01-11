@@ -15,6 +15,12 @@ functions:
       - httpApi:
           path: /
           method: post
+  db:
+    handler: handler.db
+    events:
+      - httpApi:
+          path: /db
+          method: post
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)

@@ -29,7 +29,10 @@ def sample_analyze_sentiment(sample_text):
     encoding_type = language_v1.EncodingType.UTF8
 
     # calls the api to process the text
-    response = client.analyze_sentiment(request = {'document': document, 'encoding_type': encoding_type})
+    try:
+        response = client.analyze_sentiment(request = {'document': document, 'encoding_type': encoding_type})
+    except:
+        return 404
 
     # get overall sentiment of the input document
     return [response.document_sentiment.score, response.document_sentiment.magnitude]

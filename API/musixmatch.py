@@ -12,7 +12,11 @@ def get_track_id(title, artist):
     if response['message']['header']['status_code'] == 404:
         return 404
 
-    track_id = response['message']['body']['track_list'][0]['track']['track_id']
+    try:
+        track_id = response['message']['body']['track_list'][0]['track']['track_id']
+    except:
+        return 404
+
     return track_id
 
 def get_track_lyrics(track_id):
@@ -24,7 +28,11 @@ def get_track_lyrics(track_id):
     if response['message']['header']['status_code'] == 404:
         return 404
 
-    lyrics = response['message']['body']['lyrics']['lyrics_body'][:-75]
+    try:
+        lyrics = response['message']['body']['lyrics']['lyrics_body'][:-75]
+    except:
+        return 404
+
     return lyrics
 
 def main():
