@@ -122,5 +122,17 @@
     data: () => ({
       
       }),
+
+    methods: {
+    keyword(){
+      this.$router.push('/keyword')
+      // console.log("click keyword")
+    },
+    dashboard(){
+      this.$router.push('/dashboard')
+      // console.log("click dashboard")
+    },
+
+    }
   }
 </script>
