@@ -47,7 +47,6 @@ Gostaria de ver informações sobre o site e sobre como outras pessoas o usam.
   * Exibir as estatísticas no site; (front-end) [Marcos]
 
 
-
 ### História:
 Gostaria de salvar as playlists montadas pelo site na minha conta do spotify.
 * **Tarefas:**
@@ -58,4 +57,19 @@ Gostaria de salvar as playlists montadas pelo site na minha conta do spotify.
   * Salvar usuário no banco de dados [André]
 
 ## Principais tecnologias
-O projeto será programado inteiramente na linguagem **JavaScript**, e para o front-end será usado o framework **Vue.js**. Para a coleta de dados, será usada a **Spotify Web API**, que permite acesso aos bancos de dados de usuários, faixas, playlists e outros dados do Spotify relevantes para a aplicação, e a **STANDS4 Synonyms API**, que identifica sinônimos de palavras. Os testes serão feitos por meio dos frameworks de testes **Jest** e **Selenium**.
+O projeto foi programado na linguagem **JavaScript** no front-end, usando o framework **Vue.js**, e **python** e **AWS** no backend. Para a coleta de dados, foi usada a **Spotify Web API**, que permite acesso aos bancos de dados de usuários, faixas, playlists e outros dados do Spotify relevantes para a aplicação, e a **Google Natural Language API**, que permitiu a classificação de sentimentos para cada texto.
+
+
+## Retrospectiva do Sprint
+
+Para o próximo sprint pretendemos realizar algumas melhorias e implementar novas funções no projeto:
+
+Todas as histórias foram implementadas, com exceção da última que era relacionada à conexão do usuário do site com sua conta do spotify, portanto deixamos essa conexão para o próximo sprint.
+
+Em relação ao banco de dados, utilizamos o firebase provisoriamente, para retrospectivas futuras pretendemos modificar pelo mongoDB pois é mais robusto.
+
+O sistema não está otimizado para ser utilizado no navegador do celular, portanto pretendemos realizar essa otimização para o próximo sprint.
+
+Ficamos felizes com a página de estatísticas, nos dá uma ideia de como os usuários utilizam nosso site. Porém, outras estatísticas poderiam ser adicionadas e que também são úteis, como as últimas músicas pesquisadas no site.
+
+Durante a implementação do trabalho e criação do Design tivemos ideias melhores sobre como apresentar os sentimentos para o usuário. Ao invés de utilizar uma API de sinônimos encontramos uma outra API que retornava informações acerca do sentimento da música, o que foi ideal para a ideia do sistema.
