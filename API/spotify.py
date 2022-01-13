@@ -2,8 +2,8 @@ import requests
 import json
 from base64 import b64encode
 
-client_id = '3daeddc98fd94f57aed5e2e65c3b385f'
-client_secret = '91fec090870346b594e859eff6c2744c'
+client_id = ''
+client_secret = ''
 
 def get_client_token():
     """

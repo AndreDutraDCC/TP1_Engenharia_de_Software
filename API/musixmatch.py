@@ -1,7 +1,7 @@
 import requests
 
-SEARCH_URL = 'https://api.musixmatch.com/ws/1.1/track.search?q_track={0}&q_artist={1}&apikey=e5cc295158a91cb6a0419bdca5d661c7' # 0 title 1 artist
-LYRICS_URL = 'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id={0}&apikey=e5cc295158a91cb6a0419bdca5d661c7' # 0 track id
+SEARCH_URL = 'https://api.musixmatch.com/ws/1.1/track.search?q_track={0}&q_artist={1}&apikey=' # 0 title 1 artist
+LYRICS_URL = 'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id={0}&apikey=' # 0 track id
 
 def get_track_id(title, artist):
     """

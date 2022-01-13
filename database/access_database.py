@@ -24,3 +24,9 @@ def set_nova_pesquisa(query):
     colecao = Client.Listify_db.statistics
     colecao.update_one({},{"$inc": {"pesquisas."+query: 1}})
 
+def main():
+    set_nova_pesquisa('ronson princess')
+    print(get_view())
+
+if __name__ == '__main__':
+    main()
